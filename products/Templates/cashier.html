@@ -1,0 +1,27 @@
+
+<h1>{{error}}</h1>
+<br/>
+{% for g in gro.all %}
+<form method="POST" action="{% url 'cashier' %}" enctype="multipart/form-data"></form>
+{% csrf_token %}
+
+{{g.title}}
+<br/>
+<img src="{{g.image.url}}" >
+<br/>
+{{g.body}}
+<br/>
+{{g.price}}
+<br/>
+NO. of items in stock {{g.No_of_items}}
+<br/>
+<input type="text" name="deduct" />
+<br/>
+<br/>
+<input class="btn btn-primary" type="submit" value="change" />
+
+
+</form>
+
+
+{% endfor %}

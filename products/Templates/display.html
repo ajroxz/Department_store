@@ -1,0 +1,15 @@
+hello :)
+
+<br/>
+{% for g in gro.all %}
+
+{{g.title}}
+<br/>
+<img src="{{g.image.url}}" >
+<br/>
+{{g.body}}
+<br/>
+{{g.price}}
+<br/>
+{{g.No_of_items}}
+{% endfor %}

@@ -1,0 +1,32 @@
+{% for p in product.all %}  
+<form method="POST" action="{% url 'cashier' %}"  enctype="multipart/form-data" >
+    {% csrf_token %}
+    <br/>
+    <br/>
+    {{p.title}}
+    <br/>
+    <img src="{{p.image.url}}">
+    <br/>
+    {{p.body}}
+    <br/>
+    {{p.price}}
+    <br/>
+    NO. of items in stock {{p.No_of_items}}
+    <br/>
+
+    <input type="text" name="deduct" />
+    <br/>
+    <input type="text" name="id" value="{{p.i}}"/>
+    <br/>
+    <input class="btn btn-primary" type="submit" value="change" />
+
+</form>
+{% endfor %}
+
+
+
+    
+
+
+
+

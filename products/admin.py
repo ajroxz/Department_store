@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import homeutilities,Fooditems,beverages,grocery
+from .models import Product
 
 # Register your models here.
-admin.site.register(beverages)
-admin.site.register(Fooditems)
-admin.site.register(homeutilities)
-admin.site.register(grocery)
+admin.site.register(Product)

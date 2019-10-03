@@ -1,0 +1,36 @@
+
+
+{% block content %}
+
+
+
+<h1>hello :)</h1>
+
+
+{% for p in product.all %}
+<div class="row">
+    <div class="col-4">
+        <img src="{{ p.image.url }}" class="img-fluid" />
+    </div>
+    <div class="col-6">
+        <h3>{{p.title}}</h3>
+    </div>
+    <div class="col-6">
+        <h3>Price:{{p.price}}</h3>
+    </div>
+    <div class="col-4">
+        <a>No. of items: {{p.No_of_items}}</a>
+    </div>
+    <div class="col-4">
+        <a href="javascript:{document.getElementById('deduct{{p.id}}').submit()}"><button class="btn btn-primary btn-lg btn-block">Deduct {{product.No_of_items}}</button></a>
+    </div>
+</div>
+
+<form id="deduct{{p.id}}"  method="POST" action="{% url 'deduct' p.id %}">
+    {% csrf_token %}
+    <input type="hidden">
+</form>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-4">
+        <img src="{{ product.image.url }}" class="img-fluid" />
+    </div>
+    <div class="col-6">
+        <h3>{{product.title}}</h3>
+    </div>
+    <div class="col-6">
+        <h3>Price:{{product.price}}</h3>
+    </div>
+    <div class="col-4">
+        <a>No. of items: {{p.No_of_items}}</a>
+    </div>
+    <div class="col-4">
+        <a href="javascript:{document.getElementById('deduct').submit()}"><button class="btn btn-primary btn-lg btn-block">Deduct {{product.No_of_items}}</button></a>
+    </div>
+</div>
+
+<form id="deduct"  method="POST" action="{% url 'deduct' product.id %}">
+    {% csrf_token %}
+    <input type="hidden">
+</form>
+
+{% endblock %}

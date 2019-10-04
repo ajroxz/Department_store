@@ -89,5 +89,5 @@ def clear(request):
     return redirect('display')
 
 
-    
+ #your code is superr nice good work keepit up   
         

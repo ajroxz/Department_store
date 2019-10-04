@@ -7,6 +7,8 @@ class Product(models.Model):
 
     pub_date = models.DateTimeField(auto_now_add=True)
 
+    exp_date = models.DateTimeField()
+
     image = models.ImageField(upload_to='images')
     
     body = models.TextField()

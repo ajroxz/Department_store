@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -8,8 +8,15 @@
 <br/>
 <br/>
 {% endif %}
+<body class="text-center">
+  
+      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
-<h1>CREATE</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Add New Product</h1>
 
 <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
   {% csrf_token %}
@@ -17,17 +24,30 @@
   <br/>
   <input type="text" name="title" />
   <br/>
+
   Image:
+  <br/>
+  &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="file" name="image" />
   <br/>
+  
   Body:
   <br/>
   <input type="text" name="body"/>
   <br/>
   
+  
   Price:
+  <br/>
   <input type="text" name="price"/>
   <br/>
+  Expiry Date:
+  <br/>
+  <input type="datetime" name="datetime"/>
+  <br/>
+
 
  
   <br/>
@@ -35,5 +55,6 @@
   <input class="btn btn-primary" type="submit" value="Add Product" />
   
 </form>
+</body>
 
 {% endblock %}

@@ -1,1 +1,121 @@
-{{total}}
+{% extends 'base.html' %}
+{% block content%}
+<script>
+        function printDiv(el) {
+     var printContents = document.getElementById(el).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+    </script>
+<div id='x'>
+<h1>Department Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receipt</h1>
+
+<hr>
+
+
+<table>
+    <thead>
+    <tr>
+    <th> ITEMS </th>
+    <th> &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbspQUANTITY&nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp </th>
+    <th>&nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp PRICE &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp</th>
+    <th> &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbspTOTAL </th>
+    </tr>
+    </thead>
+<table/>
+{% for t in list %}
+{% for a in t %}
+
+{{a}}
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+
+
+{% endfor %}
+<br/>
+{% endfor %}
+
+<br/>
+<hr>
+<table>
+        <thead>
+        <tr>
+        <th> Total: </th>
+        <th> {{total}}  </th>
+        <th>   </th>
+        </tr>
+        </thead>
+    <table/>
+    <table>
+            <thead>
+            <tr>
+            <th> Discount: </th>
+            <th> {{discount}}  &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp
+                        &nbsp<img src="\media\images (5).jpeg" width="80" height="110" > </th>
+            </tr>
+            </thead>
+        <table/>
+        <table>
+                <thead>
+                <tr>
+                <th> Pay: </th>
+                <th> {{pay}} </th>
+                </tr>
+                </thead>
+            <table/>
+<br/>
+        </div id='x'>
+
+
+<a href="http://localhost:8000/products/clear"><button class="btn btn-primary ">New Receipt</button></a>
+<input type="button" onclick="printDiv('x')" value="Print!"/>
+
+{% endblock %}
+        

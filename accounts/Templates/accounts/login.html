@@ -2,30 +2,60 @@
 
 {% block content %}
 
+
+
+
+
+<style>
+    body {
+        height: 100%;
+        width: 100%;
+        text-decoration-color: black;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+       background-image: url("\\media\\samuel-zeller-oBb-Y26PJgg-unsplash.jpg");
+    }
+ </style>
+
 {% if error %}
 
-{{error}}
+<h1><b>{{error}}</b></h1>
 <br/>
 <br/>
 {% endif %}
 
-<h1>Log In</h1>
 
-<form method="POST" action="{% url 'login' %}">
-  {% csrf_token %}
-  Username:
+    
+    <!-- Bootstrap core CSS -->
+
+
+  <body class="text-center">
+      <form method="POST" action="{% url 'login' %}">
+          {% csrf_token %}
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+  <h1 class="h3 mb-3 font-weight-normal"><b>Log In</b></h1>
+  <br/>
+  <h4><b> Username:</h4></b>
+  
   <br/>
   <input type="text" name="username" />
   <br/>
-  Password:
+  <br/>
+  <h4><b>Password:</h4></b>
+  
   <br/>
   <input type="password" name="password"/>
-  
- 
+  <br/>
   <br/>
   <br/>
   <input class="btn btn-primary" type="submit" value="Log In" />
   
+  <p class="mt-5 mb-3 text-muted">&copy; 2019-2022</p>
 </form>
+</body>
 
 {% endblock %}

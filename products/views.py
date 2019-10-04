@@ -2,15 +2,19 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from django.utils import timezone
+from datetime import date
 
-b=list()
+
+b=[]
 a=0
 # Create your views here.
 def display(request):
     pro = Product.objects
-
-
-    return render(request,'products/display.html',{'product':pro})
+    p = Product()
+    t = date.today()
+    
+    return render(request,'products/display.html',{'product':pro,'t':t})
+    
 
 @login_required
 def create(request):
@@ -45,15 +49,45 @@ def deduct(request,product_id):
         product.No_of_items -=1
         temp=list()
         temp.append(product.title)
-        global a
-        global b
         a=(n-product.No_of_items)*product.price
+        temp.append(n-product.No_of_items)
         temp.append(a)
         b.append(temp)
         product.save()
         return redirect('display')
 
 def receipt(request):
-    global a
+    count=0
+    upd_list=list()
+    
+    
+    for i in b:
+        a=i[0]
+        for z in b:
+            if a==z[0]:
+                count+=1
+        i[1]=count
+        count=0
+
+    for i in b:
+        if i not in upd_list:
+            upd_list.append(i)
+    Total=0
+    for i in upd_list:
+        i.append(i[1]*i[2])
+
+    for i in upd_list:
+        Total+=i[3]
+
+    discount='10%'
+    pay=Total-(Total*(0.1))    
+    return render(request,'products/receipt.html',{'list':upd_list,'total':Total,'discount':discount,'pay':pay})
+
+def clear(request):
     global b
-    return render(request,'products/receipt.html',{'total':b})
+    del b[:]
+    return redirect('display')
+
+
+    
+        

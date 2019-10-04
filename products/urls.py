@@ -8,6 +8,7 @@ urlpatterns = [
     path('<int:product_id>',views.detail,name='detail'),
     path('<int:product_id>/deduct',views.deduct,name='deduct'),
     path('receipt/',views.receipt,name='receipt'),
+    path('clear/',views.clear,name='clear'),
     
 
 ]

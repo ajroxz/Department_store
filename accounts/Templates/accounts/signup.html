@@ -2,27 +2,45 @@
 
 {% block content %}
 
-{% if error %}
 
-{{error}}
-<br/>
-<br/>
-{% endif %}
+<style>
+    body {
+        height: 100%;
+        width: 100%;
+        text-decoration-color: black;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+       background-image: url("\\media\\megan-markham-T0d_OmJ85VI-unsplash (1).jpg");
+    }
+ </style>
+<body class="text-center">
+    {% if error %}
 
-<h1>Sign Up</h1>
+    {{error}}
+    <br/>
+    <br/>
+    {% endif %}
+
+      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h1 class="h3 mb-3 font-weight-normal"><b>Sign Up</b></h1>
 
 <form method="POST" action="{% url 'signup' %}">
   {% csrf_token %}
-  Username:
+  <b>Username:</b>
   <br/>
   <input type="text" name="username" />
   <br/>
-  Password:
+<b>Password:</b>
   <br/>
   <input type="password" name="password1"/>
   <br/>
   
-  Confirm Password:
+<b> Confirm Password:</b>
   <br/>
   <input type="password" name="password2"/>
   <br/>
@@ -30,5 +48,6 @@
   <input class="btn btn-primary" type="submit" value="Sign Up!" />
   
 </form>
+</body>
 
 {% endblock %}

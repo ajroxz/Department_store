@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content%}
+
 <script>
         function printDiv(el) {
      var printContents = document.getElementById(el).innerHTML;
@@ -19,59 +20,38 @@
 
 
 <table>
-    <thead>
-    <tr>
-    <th> ITEMS </th>
-    <th> &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbspQUANTITY&nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp </th>
-    <th>&nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp PRICE &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp</th>
-    <th> &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbspTOTAL </th>
-    </tr>
-    </thead>
+   
 <table/>
-{% for t in list %}
-{% for a in t %}
+<table>
+                <thead>
+                                <tr>
+                                <th> ITEMS </th>
+                                <th>QUANTITY </th>
+                                <th>PRICE</th>
+                                <th>TOTAL</th>
+                                </tr>
+                                </thead>
+        <tbody>
+                {% for t in list %}
+                <tr>
+                {% for a in t %}
+                <td>
+                                
+                {{a}}
+                &nbsp;
+                
+                </td>
+                
+                       
+                
+                
+                {% endfor %}
+                </tr> 
+                <br/>
+                {% endfor %}
+        </tbody>
+</table>
 
-{{a}}
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-
-
-{% endfor %}
-<br/>
-{% endfor %}
 
 <br/>
 <hr>

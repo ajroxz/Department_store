@@ -7,13 +7,15 @@ from datetime import date
 
 b=[]
 a=0
+t=''
 # Create your views here.
 def display(request):
     pro = Product.objects
     p = Product()
-    t = date.today()
     
-    return render(request,'products/display.html',{'product':pro,'t':t})
+    
+    
+    return render(request,'products/display.html',{'product':pro})
     
 
 @login_required
@@ -46,6 +48,8 @@ def deduct(request,product_id):
     if request.method=='POST':
         product = get_object_or_404(Product,pk=product_id)
         n=product.No_of_items
+        if n == 0:
+            return redirect('display')
         product.No_of_items -=1
         temp=list()
         temp.append(product.title)

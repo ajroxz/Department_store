@@ -57,7 +57,7 @@ ROOT_URLCONF = 'dsm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['dsm/Templates'],
+        'DIRS': [os.path.join('templates'),'dsm/Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

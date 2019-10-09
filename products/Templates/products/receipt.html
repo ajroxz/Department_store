@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content%}
-
+<head>
+        <title>
+                Receipt
+        </title>
+</head>
 <script>
         function printDiv(el) {
      var printContents = document.getElementById(el).innerHTML;
@@ -93,9 +97,9 @@
 <br/>
         </div id='x'>
 
-
+<footer>
 <a href="http://localhost:8000/products/clear"><button class="btn btn-primary ">New Receipt</button></a>
-<input type="button" onclick="printDiv('x')" value="Print!"/>
-
+<input type="button" onclick="printDiv('x')"  value="Print!"/>
+</footer>
 {% endblock %}
         

@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "intelliSenseMode": "${default}",
+            "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
+            "cppStandard": "c++20"
+        }
+    ],
+    "version": 4
+}

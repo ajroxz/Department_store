@@ -3,7 +3,7 @@ import pandas as pd
 l=[['Pepsi', 1, 65], ['Tomato', 1, 50], ['Tomato', 1, 50], ['Coffee', 1, 500], ['Coffee', 1, 500], ['Coffee', 1, 500], ['Coffee', 1, 500], ['Coffee', 1, 500]]
 w=dict()
 b=[]
-upd_list = list()
+upd_list = list()#to upadate lst
 temp=list()
 
 for i in l:

@@ -1,4 +1,4 @@
-# Department_store
+# Department Store Management
 
 #### This webapp is made using django.
 
